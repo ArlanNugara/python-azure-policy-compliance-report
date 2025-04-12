@@ -1,0 +1,44 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16">
+  <diagram name="Page-1" id="8Z-mVGdYIYQ4Lvq3g48l">
+    <mxGraphModel dx="934" dy="655" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AiyU_EyFQXJKA9eVh-o--3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="AiyU_EyFQXJKA9eVh-o--1" target="AiyU_EyFQXJKA9eVh-o--2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AiyU_EyFQXJKA9eVh-o--1" value="" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Azure_Pipelines.svg;" vertex="1" parent="1">
+          <mxGeometry x="80" y="310" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AiyU_EyFQXJKA9eVh-o--5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="AiyU_EyFQXJKA9eVh-o--2" target="AiyU_EyFQXJKA9eVh-o--4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AiyU_EyFQXJKA9eVh-o--9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="AiyU_EyFQXJKA9eVh-o--2" target="AiyU_EyFQXJKA9eVh-o--8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="283" y="486" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AiyU_EyFQXJKA9eVh-o--2" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="250" y="300" width="73" height="80.15" as="geometry" />
+        </mxCell>
+        <mxCell id="AiyU_EyFQXJKA9eVh-o--12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="AiyU_EyFQXJKA9eVh-o--4" target="AiyU_EyFQXJKA9eVh-o--2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AiyU_EyFQXJKA9eVh-o--4" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="410" y="300" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AiyU_EyFQXJKA9eVh-o--8" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Microsoft_Excel_2013-2019_logo.svg/1085px-Microsoft_Excel_2013-2019_logo.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="403.5" y="442" width="93" height="87.85" as="geometry" />
+        </mxCell>
+        <mxCell id="AiyU_EyFQXJKA9eVh-o--10" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/storage/Storage_Accounts.svg;" vertex="1" parent="1">
+          <mxGeometry x="619" y="450" width="94" height="75.2" as="geometry" />
+        </mxCell>
+        <mxCell id="AiyU_EyFQXJKA9eVh-o--11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.07;entryY=0.482;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="AiyU_EyFQXJKA9eVh-o--8" target="AiyU_EyFQXJKA9eVh-o--10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

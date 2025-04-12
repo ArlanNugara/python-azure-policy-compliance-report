@@ -1,0 +1,70 @@
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+parameters:
+  - name: MG
+    displayName: Select the Management Group
+    type: string
+    values:
+    - Your-Value-Here
+    - Your-Value-Here
+
+variables:
+  - group: "Your value here"
+  - name: AZURE_SERVICE_CONNECTION
+    value: "Your value here"
+  - name: bashPreInjectScript
+    value: 'set -E; function catch { echo "##vso[task.logissue type=error]Caller: $(caller), LineNo: $LINENO, Command: $BASH_COMMAND" ; exit 1 ; } ; echo ; echo "Current working directory: $(pwd)" ; echo ; trap catch ERR'
+  - name: bashPostInjectScript
+    value: ':'
+
+steps:
+- task: UsePythonVersion@0
+  displayName: 'Use Python verison 3.8'
+  inputs:
+    versionSpec: '3.8'
+- script: pip install -r requirements.txt
+  displayName: 'Install Python Dependencies'
+- task: AzureCLI@2
+  displayName: 'Get data from Azure Rest API'
+  inputs:
+    scriptType: bash
+    azureSubscription: $(AZURE_SERVICE_CONNECTION)
+    workingDirectory: $(System.DefaultWorkingDirectory)
+    scriptLocation: inlineScript
+    inlineScript: |
+      $(bashPreInjectScript)
+      export ARM_CLIENT_ID=$(ARM-CLIENT-ID)
+      export ARM_CLIENT_SECRET=$(ARM-CLIENT-SECRET)
+      export ARM_SUBSCRIPTION_ID=$(ARM-SUBSCRIPTION-ID)
+      export ARM_TENANT_ID=$(ARM-TENANT-ID)
+      python3 main.py ${{ parameters.MG }}
+      ls -ltrh
+      $(bashPostInjectScript)
+- task: AzureCLI@2
+  displayName: 'Generate Excel File'
+  inputs:
+    scriptType: bash
+    azureSubscription: $(AZURE_SERVICE_CONNECTION)
+    workingDirectory: $(System.DefaultWorkingDirectory)
+    scriptLocation: inlineScript
+    inlineScript: |
+      $(bashPreInjectScript)
+      python3 generate_report.py
+      ls -ltrh
+      $(bashPostInjectScript)
+- task: AzureCLI@2
+  displayName: 'Upload Excel File'
+  inputs:
+    scriptType: bash
+    azureSubscription: $(AZURE_SERVICE_CONNECTION)
+    scriptLocation: inlineScript
+    inlineScript: |
+      export ARM_ACCESS_KEY=$(ARM-ACCESS-KEY)
+      export SA_NAME=$(SA-NAME)
+      today=`date +%F`
+      ls -ltrh
+      az storage blob upload --account-name $(SA-NAME) --container-name "policyreports/Azure_Policy_Compliance-$today" --account-key $(ARM-ACCESS-KEY) --file "$(Build.SourcesDirectory)/reports.xlsx" --name "Report-${{ parameters.MG }}-$today.xlsx" --overwrite true
+        
